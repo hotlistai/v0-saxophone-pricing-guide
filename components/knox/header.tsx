@@ -1,8 +1,22 @@
+import Image from "next/image"
 import { FadeIn } from "./fade-in"
 
 export function Header() {
   return (
-    <header className="px-9 md:px-[72px] pt-[72px] pb-14 max-w-[1040px] mx-auto">
+    <header>
+      {/* Hero Banner */}
+      <div className="w-full">
+        <Image
+          src="https://www.knoxsignature.com/images/knox-press-banner.png"
+          alt="Knox Signature"
+          width={1920}
+          height={600}
+          priority
+          className="w-full h-auto block"
+        />
+      </div>
+
+      <div className="px-9 md:px-[72px] pt-14 pb-14 max-w-[1040px] mx-auto">
       <FadeIn>
         <p
           className="text-[10px] font-semibold uppercase mb-3"
@@ -54,6 +68,7 @@ export function Header() {
           </p>
         </div>
       </FadeIn>
+      </div>
     </header>
   )
 }

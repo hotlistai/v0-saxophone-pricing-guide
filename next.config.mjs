@@ -11,6 +11,11 @@ const nextConfig = {
         hostname: "raw.githubusercontent.com",
         pathname: "/hotlistai/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.knoxsignature.com",
+        pathname: "/images/**",
+      },
     ],
   },
 }
