@@ -1,3 +1,5 @@
+"use client"
+
 import { FadeIn } from "./fade-in"
 
 function StyledListItem({ children }: { children: React.ReactNode }) {
