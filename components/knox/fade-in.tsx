@@ -2,13 +2,15 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react"
 
-interface FadeInSectionProps {
+export function FadeIn({
+  children,
+  className = "",
+  delay = 0,
+}: {
   children: ReactNode
   className?: string
   delay?: number
-}
-
-export function FadeInSection({ children, className = "", delay = 0 }: FadeInSectionProps) {
+}) {
   const ref = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -20,24 +22,21 @@ export function FadeInSection({ children, className = "", delay = 0 }: FadeInSec
           observer.unobserve(entry.target)
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.15 }
     )
-
-    const el = ref.current
-    if (el) observer.observe(el)
-
-    return () => {
-      if (el) observer.unobserve(el)
-    }
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
   }, [])
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 ease-out ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-      } ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={className}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? "translateY(0)" : "translateY(20px)",
+        transition: `opacity 0.8s ease ${delay}ms, transform 0.8s ease ${delay}ms`,
+      }}
     >
       {children}
     </div>

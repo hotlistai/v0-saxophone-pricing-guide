@@ -4,31 +4,41 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --color-midnight: #0a0a0a;
+  --color-snow: #ffffff;
+  --color-hotlist-purple: #667eea;
+  --color-hotlist-violet: #764ba2;
+
   --background: #0a0a0a;
-  --foreground: #f0ebe3;
+  --foreground: #ffffff;
   --card: #111111;
-  --card-foreground: #f0ebe3;
+  --card-foreground: #ffffff;
   --popover: #111111;
-  --popover-foreground: #f0ebe3;
-  --primary: #f0ebe3;
-  --primary-foreground: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --primary: #667eea;
+  --primary-foreground: #ffffff;
   --secondary: #1a1a1a;
-  --secondary-foreground: #f0ebe3;
+  --secondary-foreground: #ffffff;
   --muted: #1a1a1a;
-  --muted-foreground: #8a8378;
-  --accent: #c8b89a;
-  --accent-foreground: #0a0a0a;
+  --muted-foreground: rgba(255, 255, 255, 0.58);
+  --accent: #764ba2;
+  --accent-foreground: #ffffff;
   --destructive: #7f1d1d;
-  --destructive-foreground: #f0ebe3;
-  --border: #2a2520;
-  --input: #2a2520;
-  --ring: #c8b89a;
-  --radius: 0rem;
+  --destructive-foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #667eea;
+  --radius: 12px;
+
+  --opacity-primary: 0.88;
+  --opacity-secondary: 0.72;
+  --opacity-tertiary: 0.58;
+  --opacity-muted: 0.4;
+  --opacity-whisper: 0.25;
 }
 
 @theme inline {
-  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
-  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -60,7 +70,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background: linear-gradient(180deg, #0a0a0a 0%, #14141a 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    line-height: 1.7;
+    font-weight: 400;
+    font-size: 17px;
   }
 }
 
@@ -68,49 +86,28 @@ html {
   scroll-behavior: smooth;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Gradient accent text */
+.gradient-accent {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
-@keyframes revealLine {
-  from {
-    width: 0;
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background: #0a0a0a;
   }
-  to {
-    width: 100%;
-  }
 }
-
-.animate-fade-in-up {
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 1.2s ease-out forwards;
-}
-
-.animate-reveal-line {
-  animation: revealLine 1.5s ease-out forwards;
-}
-
-.stagger-1 { animation-delay: 0.1s; }
-.stagger-2 { animation-delay: 0.3s; }
-.stagger-3 { animation-delay: 0.5s; }
-.stagger-4 { animation-delay: 0.7s; }
-.stagger-5 { animation-delay: 0.9s; }

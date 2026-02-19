@@ -1,24 +1,31 @@
-import { HeroVideoSection } from "@/components/knox/hero-video-section"
-import { ExperienceSection } from "@/components/knox/experience-section"
-import { Divider } from "@/components/knox/divider"
-import { IncludedSection } from "@/components/knox/included-section"
-import { VideoFeatureSection } from "@/components/knox/video-feature-section"
-import { NextStepsSection } from "@/components/knox/next-steps-section"
+import { Header } from "@/components/knox/header"
+import { PersonalVideo } from "@/components/knox/personal-video"
+import { ExperienceOverview } from "@/components/knox/experience-overview"
+import { CeremonySection } from "@/components/knox/ceremony-section"
+import { CocktailSection } from "@/components/knox/cocktail-section"
+import { PerformanceVideo } from "@/components/knox/performance-video"
+import { ReceptionSection } from "@/components/knox/reception-section"
+import { ProductionSection } from "@/components/knox/production-section"
+import { TimingSection } from "@/components/knox/timing-section"
+import { EnhancementsSection } from "@/components/knox/enhancements-section"
+import { InvestmentSection } from "@/components/knox/investment-section"
 import { ClosingSection } from "@/components/knox/closing-section"
 import { Footer } from "@/components/knox/footer"
 
 export default function KylieNoahPage() {
   return (
     <main>
-      <HeroVideoSection />
-      <ExperienceSection />
-      <Divider />
-      <IncludedSection />
-      <Divider />
-      <VideoFeatureSection />
-      <Divider />
-      <NextStepsSection />
-      <Divider />
+      <Header />
+      <PersonalVideo />
+      <ExperienceOverview />
+      <CeremonySection />
+      <CocktailSection />
+      <PerformanceVideo />
+      <ReceptionSection />
+      <ProductionSection />
+      <TimingSection />
+      <EnhancementsSection />
+      <InvestmentSection />
       <ClosingSection />
       <Footer />
     </main>
