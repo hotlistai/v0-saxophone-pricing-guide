@@ -57,9 +57,9 @@ export function ExperienceOverview() {
             className="font-light"
             style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7 }}
           >
-            This is not a late-night reception. This is a curated evening
-            designed to unfold naturally and conclude around 9:30{"\u2013"}10:00
-            pm, with the option to extend if desired.
+            The evening is designed to flow naturally, and should the night
+            call for it, extensions are always welcome{"\u2014"}that{"'"}s often
+            where the best energy lives.
           </p>
         </FadeIn>
 
