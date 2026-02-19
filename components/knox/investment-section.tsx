@@ -89,70 +89,30 @@ export function InvestmentSection() {
             color: "#ffffff",
           }}
         >
-          Three ways to experience Knox Signature.
+          The Knox Signature Experience
         </h2>
-        <p
-          className="mt-5 text-lg font-light"
-          style={{ lineHeight: 1.85, color: "rgba(255,255,255,0.88)" }}
-        >
-          Choose the coverage that fits your vision. Each package includes our
-          signature blend of live performance and professional DJ mixing.
-        </p>
       </FadeIn>
 
       <FadeIn delay={100}>
         <PackageCard
-          name="The Afterglow"
-          price="$3,950"
-          description="Reception only — for couples who want the dance floor experience."
+          name="The Full Atmosphere"
+          price="$5,950"
+          description="Ceremony + dinner + post-dinner — the complete Knox Signature experience for your evening."
+          featured
           items={[
-            "Reception DJ set with live sax integration",
+            "Ceremony audio support with wireless microphones",
+            "Upbeat, curated dinner music with live sax accents",
+            "Post-dinner DJ set with live saxophone integration",
             "Premium column-array sound system",
             "Architectural lighting design",
             "Minimal white DJ command center",
-            "Up to 4 hours of coverage",
+            "Pre-event consultation and setlist curation",
             "Wireless microphones for toasts and announcements",
           ]}
         />
       </FadeIn>
 
       <FadeIn delay={200}>
-        <PackageCard
-          name="The Build"
-          price="$4,750"
-          description="Cocktail hour + reception — the full evening atmosphere."
-          items={[
-            "Live cocktail hour performance (piano + saxophone)",
-            "Reception DJ set with live sax integration",
-            "Premium column-array sound system",
-            "Architectural lighting design",
-            "Minimal white DJ command center",
-            "Up to 5 hours of coverage",
-            "Wireless microphones for toasts and announcements",
-          ]}
-        />
-      </FadeIn>
-
-      <FadeIn delay={300}>
-        <PackageCard
-          name="The Full Atmosphere"
-          price="$5,950"
-          description="Ceremony + cocktail + reception — the complete Knox Signature experience."
-          featured
-          items={[
-            "Ceremony audio support with wireless microphones",
-            "Live cocktail hour performance (piano + saxophone)",
-            "Reception DJ set with live sax integration",
-            "Premium column-array sound system",
-            "Architectural lighting design",
-            "Minimal white DJ command center",
-            "Up to 6 hours total coverage",
-            "Pre-event consultation and setlist curation",
-          ]}
-        />
-      </FadeIn>
-
-      <FadeIn delay={400}>
         <div
           className="my-10 py-7 px-7 rounded-xl"
           style={{

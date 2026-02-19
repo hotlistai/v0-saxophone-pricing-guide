@@ -39,7 +39,7 @@ export function Header() {
             className="text-[26px] font-medium mb-5"
             style={{ lineHeight: 1.4, color: "#ffffff" }}
           >
-            Thank you for our conversation.
+            So nice to meet you.
           </h2>
           <p
             className="text-base"
@@ -48,12 +48,9 @@ export function Header() {
               lineHeight: 1.85,
             }}
           >
-            It was a pleasure speaking with you about Kylie and Noah{"'"}s
-            surprise ceremony and private dinner on October 9, 2026 at a
-            private residence in Plano. We{"'"}re excited to design an
-            atmosphere that reflects your vision and creates an unforgettable
-            experience. Below is a personalized video of what Knox Signature
-            brings to an event.
+            We{"'"}d love the opportunity to perform at y{"'"}all{"'"}s surprise
+            ceremony and private dinner on October 9, 2026. Below is a look at
+            what Knox Signature brings to an evening like yours.
           </p>
         </div>
       </FadeIn>

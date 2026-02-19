@@ -28,7 +28,7 @@ export function ReceptionSection() {
           className="text-[11px] font-semibold uppercase mb-5"
           style={{ letterSpacing: "0.32em", color: "rgba(255,255,255,0.72)" }}
         >
-          03 — Dinner
+          02 — Dinner
         </p>
         <h3
           className="font-bold mb-5"
@@ -39,39 +39,19 @@ export function ReceptionSection() {
             color: "#ffffff",
           }}
         >
-          The dinner unfolds naturally.
+          Upbeat, fun, and full of energy.
         </h3>
       </FadeIn>
 
-      {/* Dinner Phase */}
       <FadeIn delay={100}>
-        <div className="mt-14 mb-14">
-          <h3
-            className="font-bold mb-5"
-            style={{
-              fontSize: "clamp(20px, 2.5vw, 24px)",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1,
-              color: "#ffffff",
-            }}
-          >
-            Dinner
-          </h3>
-          <ul className="list-none my-5">
-            <StyledListItem>
-              Thoughtful music selection that supports conversation
-            </StyledListItem>
-            <StyledListItem>
-              Seamless handling of toasts using wireless microphones
-            </StyledListItem>
-            <StyledListItem>
-              Optional live accents to complement key moments
-            </StyledListItem>
-          </ul>
-        </div>
+        <p className="font-light" style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7 }}>
+          The dinner music is designed to keep the energy alive. This is not
+          background music{"\u2014"}it{"'"}s a curated, upbeat atmosphere that
+          keeps the room feeling celebratory from the first course to the last
+          toast.
+        </p>
       </FadeIn>
 
-      {/* After-Dinner Phase */}
       <FadeIn delay={200}>
         <div className="mt-14 mb-14">
           <h3
@@ -83,14 +63,41 @@ export function ReceptionSection() {
               color: "#ffffff",
             }}
           >
-            Post-Dinner Atmosphere
+            During Dinner
+          </h3>
+          <ul className="list-none my-5">
+            <StyledListItem>
+              Upbeat, feel-good music selection that keeps the energy high
+            </StyledListItem>
+            <StyledListItem>
+              Live sax accents woven into the mix for standout moments
+            </StyledListItem>
+            <StyledListItem>
+              Seamless handling of toasts using wireless microphones
+            </StyledListItem>
+          </ul>
+        </div>
+      </FadeIn>
+
+      <FadeIn delay={300}>
+        <div className="mt-14 mb-14">
+          <h3
+            className="font-bold mb-5"
+            style={{
+              fontSize: "clamp(20px, 2.5vw, 24px)",
+              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
+              color: "#ffffff",
+            }}
+          >
+            Post-Dinner
           </h3>
           <ul className="list-none my-5">
             <StyledListItem>
               DJ-led set with live saxophone integration
             </StyledListItem>
             <StyledListItem>
-              Energy builds intentionally without gimmicks
+              Energy builds naturally{"\u2014"}fun, danceable, unforgettable
             </StyledListItem>
             <StyledListItem>
               Clean, minimal visual presentation that complements the room
@@ -99,7 +106,7 @@ export function ReceptionSection() {
         </div>
       </FadeIn>
 
-      <FadeIn delay={300}>
+      <FadeIn delay={400}>
         <div
           className="my-10 py-7 px-7 rounded-xl"
           style={{
@@ -111,8 +118,8 @@ export function ReceptionSection() {
             className="italic m-0"
             style={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.7 }}
           >
-            The goal is an atmosphere that still feels refined and
-            intentional.
+            This dinner is meant to feel like the best night out{"\u2014"}elevated,
+            intentional, and genuinely fun.
           </p>
         </div>
       </FadeIn>

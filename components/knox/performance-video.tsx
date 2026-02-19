@@ -2,7 +2,7 @@ import { FadeIn } from "./fade-in"
 import { VideoPlayer } from "./video-player"
 
 const VIDEO_SRC =
-  "https://raw.githubusercontent.com/hotlistai/anna-max-proposal/main/assets/videos/knox-dj-video.mp4"
+  "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/knox-signature-web-video-man-i-need.mp4"
 
 export function PerformanceVideo() {
   return (

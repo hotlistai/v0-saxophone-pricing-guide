@@ -47,8 +47,8 @@ export function ExperienceOverview() {
             Knox Signature will provide a complete, stress-free sound and
             entertainment experience for Kylie and Noah{"'"}s surprise ceremony
             and dinner. The goal is simple: beautiful ceremony audio, seamless
-            transitions, and a dinner atmosphere that feels elevated,
-            intentional, and effortlessly alive.
+            transitions, and a dinner atmosphere that{"'"}s upbeat, fun, and
+            effortlessly alive.
           </p>
         </FadeIn>
 
