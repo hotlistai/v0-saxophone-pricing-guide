@@ -1,5 +1,3 @@
-"use client"
-
 import { FadeIn } from "./fade-in"
 
 export function Footer() {
@@ -32,22 +30,7 @@ export function Footer() {
           <p>
             <a
               href="mailto:hello@knoxsignature.com"
-              className="pb-px transition-all duration-200"
-              style={{
-                color: "rgba(255,255,255,0.72)",
-                textDecoration: "none",
-                borderBottom: "1px solid rgba(255,255,255,0.15)",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget
-                el.style.color = "#ffffff"
-                el.style.borderBottomColor = "rgba(255,255,255,0.5)"
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget
-                el.style.color = "rgba(255,255,255,0.72)"
-                el.style.borderBottomColor = "rgba(255,255,255,0.15)"
-              }}
+              className="footer-link pb-px transition-all duration-200"
             >
               hello@knoxsignature.com
             </a>
@@ -57,22 +40,7 @@ export function Footer() {
               href="https://knoxsignature.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="pb-px transition-all duration-200"
-              style={{
-                color: "rgba(255,255,255,0.72)",
-                textDecoration: "none",
-                borderBottom: "1px solid rgba(255,255,255,0.15)",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget
-                el.style.color = "#ffffff"
-                el.style.borderBottomColor = "rgba(255,255,255,0.5)"
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget
-                el.style.color = "rgba(255,255,255,0.72)"
-                el.style.borderBottomColor = "rgba(255,255,255,0.15)"
-              }}
+              className="footer-link pb-px transition-all duration-200"
             >
               knoxsignature.com
             </a>

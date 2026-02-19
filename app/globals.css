@@ -94,6 +94,36 @@ html {
   background-clip: text;
 }
 
+/* Package card styles */
+.package-card-default {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.package-card-default:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.package-card-featured {
+  background: rgba(102, 126, 234, 0.04);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+}
+.package-card-featured:hover {
+  background: rgba(102, 126, 234, 0.06);
+  border-color: rgba(102, 126, 234, 0.5);
+}
+
+/* Footer link styles */
+.footer-link {
+  color: rgba(255, 255, 255, 0.72);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.footer-link:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

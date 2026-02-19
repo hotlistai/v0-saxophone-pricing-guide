@@ -1,5 +1,3 @@
-"use client"
-
 import { FadeIn } from "./fade-in"
 
 function StyledListItem({ children }: { children: React.ReactNode }) {
@@ -30,37 +28,11 @@ interface PackageCardProps {
 function PackageCard({ name, price, description, items, featured }: PackageCardProps) {
   return (
     <div
-      className="mt-10 py-10 px-10 rounded-2xl transition-all duration-300"
-      style={{
-        background: featured
-          ? "rgba(102,126,234,0.04)"
-          : "rgba(255,255,255,0.02)",
-        border: featured
-          ? "2px solid rgba(102,126,234,0.3)"
-          : "1px solid rgba(255,255,255,0.08)",
-      }}
-      onMouseEnter={(e) => {
-        const el = e.currentTarget
-        el.style.transform = "translateY(-2px)"
-        if (featured) {
-          el.style.borderColor = "rgba(102,126,234,0.5)"
-          el.style.background = "rgba(102,126,234,0.06)"
-        } else {
-          el.style.background = "rgba(255,255,255,0.035)"
-          el.style.borderColor = "rgba(255,255,255,0.12)"
-        }
-      }}
-      onMouseLeave={(e) => {
-        const el = e.currentTarget
-        el.style.transform = "translateY(0)"
-        if (featured) {
-          el.style.borderColor = "rgba(102,126,234,0.3)"
-          el.style.background = "rgba(102,126,234,0.04)"
-        } else {
-          el.style.background = "rgba(255,255,255,0.02)"
-          el.style.borderColor = "rgba(255,255,255,0.08)"
-        }
-      }}
+      className={`mt-10 py-10 px-10 rounded-2xl transition-all duration-300 hover:-translate-y-0.5 ${
+        featured
+          ? "package-card-featured"
+          : "package-card-default"
+      }`}
     >
       <div className="flex justify-between items-baseline flex-wrap gap-3 mb-5">
         <h3
