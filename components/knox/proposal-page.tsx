@@ -1,4 +1,6 @@
+import Image from "next/image"
 import { FadeIn } from "./fade-in"
+import { VideoPlayer } from "./video-player"
 
 /* ------------------------------------------------------------------ */
 /*  CONFIG — fill in per-client. Empty strings render as [Placeholder] */
@@ -20,47 +22,15 @@ function p(value: string, fallback: string) {
   return value || `[${fallback}]`
 }
 
-/* ------------------------------------------------------------------ */
-/*  Shared CTA pair                                                    */
-/* ------------------------------------------------------------------ */
-function CtaButtons({ center = false }: { center?: boolean }) {
-  return (
-    <div
-      className={`flex flex-wrap gap-4 ${center ? "justify-center" : ""}`}
-    >
-      <a
-        href={config.callTextLink || "#"}
-        className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg text-[15px] font-semibold tracking-wide transition-all duration-200 hover:opacity-90"
-        style={{ background: "rgba(255,255,255,0.95)", color: "#0a0a0a" }}
-      >
-        Call / Text
-      </a>
-    </div>
-  )
-}
+const BANNER_IMAGE =
+  "https://www.knoxsignature.com/images/knox-press-banner.png"
+
+const PREVIEW_VIDEO =
+  "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/knox-signature-web-video-man-i-need.mp4"
 
 /* ------------------------------------------------------------------ */
-/*  Section wrapper                                                    */
+/*  Shared components matching Knox brand language                     */
 /* ------------------------------------------------------------------ */
-function Section({
-  children,
-  className = "",
-  border = true,
-}: {
-  children: React.ReactNode
-  className?: string
-  border?: boolean
-}) {
-  return (
-    <section
-      className={`px-9 md:px-[72px] py-24 max-w-[1040px] mx-auto ${className}`}
-      style={border ? { borderTop: "1px solid rgba(255,255,255,0.06)" } : {}}
-    >
-      {children}
-    </section>
-  )
-}
-
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p
@@ -72,50 +42,124 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
-/* ------------------------------------------------------------------ */
-/*  1 — Hero                                                           */
-/* ------------------------------------------------------------------ */
-function Hero() {
+function StyledListItem({ children }: { children: React.ReactNode }) {
   return (
-    <header className="px-9 md:px-[72px] pt-28 pb-10 max-w-[1040px] mx-auto">
-      <FadeIn>
-        <p
-          className="text-[10px] font-semibold uppercase mb-4"
-          style={{ letterSpacing: "4.5px", color: "rgba(255,255,255,0.4)" }}
-        >
-          Event Proposal
-        </p>
-        <h1
-          className="font-extrabold text-balance"
-          style={{
-            fontSize: "clamp(36px, 5vw, 56px)",
-            letterSpacing: "-0.025em",
-            lineHeight: 1.05,
-            color: "#ffffff",
-          }}
-        >
-          {"Ben \u2014 Live Saxophone"}
-        </h1>
-      </FadeIn>
+    <li
+      className="relative pl-7 mb-3"
+      style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7 }}
+    >
+      <span
+        className="absolute left-0 font-light"
+        style={{ color: "rgba(255,255,255,0.25)" }}
+      >
+        {"\u2014"}
+      </span>
+      {children}
+    </li>
+  )
+}
 
-      <FadeIn delay={150}>
-        <p
-          className="mt-6 max-w-[52ch] font-light"
-          style={{
-            fontSize: "clamp(17px, 1.6vw, 20px)",
-            color: "rgba(255,255,255,0.72)",
-            lineHeight: 1.65,
-          }}
-        >
-          A featured live performance designed to elevate the room in real time.
-        </p>
-      </FadeIn>
+function CalloutBox({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      className="my-10 py-7 px-7"
+      style={{
+        background: "rgba(255,255,255,0.025)",
+        borderLeft: "2px solid rgba(255,255,255,0.15)",
+      }}
+    >
+      <p
+        className="italic m-0 font-light"
+        style={{ color: "rgba(255,255,255,0.88)", lineHeight: 1.7 }}
+      >
+        {children}
+      </p>
+    </div>
+  )
+}
 
-      <FadeIn delay={300}>
-        <div className="mt-10">
-          <CtaButtons />
-        </div>
-      </FadeIn>
+/* ------------------------------------------------------------------ */
+/*  1 — Header with Knox Banner                                        */
+/* ------------------------------------------------------------------ */
+function Header() {
+  return (
+    <header>
+      {/* Knox Banner */}
+      <div className="w-full">
+        <Image
+          src={BANNER_IMAGE}
+          alt="Knox Signature"
+          width={1920}
+          height={600}
+          priority
+          className="w-full h-auto block"
+        />
+      </div>
+
+      <div className="px-9 md:px-[72px] pt-20 pb-10 max-w-[1040px] mx-auto">
+        <FadeIn>
+          <p
+            className="text-[10px] font-semibold uppercase mb-4"
+            style={{ letterSpacing: "4.5px", color: "rgba(255,255,255,0.4)" }}
+          >
+            Event Proposal
+          </p>
+          <h1
+            className="font-extrabold text-balance"
+            style={{
+              fontSize: "clamp(36px, 5vw, 56px)",
+              letterSpacing: "-0.025em",
+              lineHeight: 1.05,
+              color: "#ffffff",
+            }}
+          >
+            {"Ben \u2014 Live Saxophone"}
+          </h1>
+        </FadeIn>
+
+        <FadeIn delay={150}>
+          <p
+            className="mt-6 max-w-[48ch] font-light"
+            style={{
+              fontSize: "clamp(17px, 1.6vw, 20px)",
+              color: "rgba(255,255,255,0.72)",
+              lineHeight: 1.65,
+            }}
+          >
+            A featured live performance designed to elevate the room in real time.
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={300}>
+          <div className="mt-10">
+            <a
+              href={config.callTextLink || "mailto:hello@knoxsignature.com?subject=Knox%20Signature%20%E2%80%94%20Schedule%20a%20Call"}
+              className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold tracking-wide transition-all duration-200 hover:opacity-80"
+              style={{
+                background: "transparent",
+                color: "rgba(255,255,255,0.88)",
+                border: "1px solid rgba(255,255,255,0.2)",
+              }}
+            >
+              Call / Text
+            </a>
+          </div>
+        </FadeIn>
+
+        {/* Private Preview */}
+        <FadeIn delay={450}>
+          <div className="mt-20">
+            <SectionLabel>Private Preview</SectionLabel>
+            <VideoPlayer src={PREVIEW_VIDEO} />
+            <p
+              className="mt-4 text-sm font-light"
+              style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
+            >
+              A look at how the evening feels when everything moves as one.
+            </p>
+          </div>
+        </FadeIn>
+      </div>
     </header>
   )
 }
@@ -133,13 +177,16 @@ function EventDetails() {
   ]
 
   return (
-    <Section>
+    <section
+      className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
       <FadeIn>
         <SectionLabel>Event Details</SectionLabel>
       </FadeIn>
       <FadeIn delay={100}>
         <div
-          className="mt-4 py-8 px-8 rounded-xl max-w-[480px]"
+          className="mt-4 py-8 px-8 max-w-[480px]"
           style={{
             background: "rgba(255,255,255,0.02)",
             border: "1px solid rgba(255,255,255,0.06)",
@@ -165,7 +212,7 @@ function EventDetails() {
           </dl>
         </div>
       </FadeIn>
-    </Section>
+    </section>
   )
 }
 
@@ -174,25 +221,53 @@ function EventDetails() {
 /* ------------------------------------------------------------------ */
 function Experience() {
   return (
-    <Section>
+    <section
+      className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
       <FadeIn>
         <SectionLabel>The Experience</SectionLabel>
-        <p
-          className="mt-2 max-w-[56ch] font-light"
+        <h3
+          className="font-bold mb-5"
           style={{
-            fontSize: "clamp(15px, 1.4vw, 17px)",
-            color: "rgba(255,255,255,0.72)",
-            lineHeight: 1.75,
+            fontSize: "clamp(20px, 2.5vw, 24px)",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            color: "#ffffff",
           }}
+        >
+          Live saxophone, tailored to the room.
+        </h3>
+      </FadeIn>
+
+      <FadeIn delay={100}>
+        <p
+          className="font-light"
+          style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7 }}
         >
           Ben performs live, roaming the room wireless and reading the energy of
           the crowd in real time. Improvised melodies meet curated moments
           throughout the evening, creating high-impact connections between the
-          music and your guests. Every set is tailored to the timeline and feel
-          of the room.
+          music and your guests.
         </p>
       </FadeIn>
-    </Section>
+
+      <FadeIn delay={200}>
+        <p
+          className="mt-5 font-light"
+          style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7 }}
+        >
+          Every set is tailored to the timeline and feel of the room.
+        </p>
+      </FadeIn>
+
+      <FadeIn delay={300}>
+        <CalloutBox>
+          The focus is always on the room{"\u2014"}not the stage. The performance
+          adapts to the energy of your guests in real time.
+        </CalloutBox>
+      </FadeIn>
+    </section>
   )
 }
 
@@ -200,43 +275,46 @@ function Experience() {
 /*  4 — What's Included                                               */
 /* ------------------------------------------------------------------ */
 function WhatsIncluded() {
-  const items = [
-    "Live saxophone performance by Ben (featured set)",
-    "Wireless, fully mobile setup",
-    "Onsite soundcheck and coordination with venue",
-    "Performance tailored to the room and timeline",
-    "Optional: add-on set / extension (upon request)",
-  ]
-
   return (
-    <Section>
+    <section
+      className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
       <FadeIn>
         <SectionLabel>{"What\u2019s Included"}</SectionLabel>
+        <h3
+          className="font-bold mb-5"
+          style={{
+            fontSize: "clamp(20px, 2.5vw, 24px)",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            color: "#ffffff",
+          }}
+        >
+          Everything for the performance.
+        </h3>
       </FadeIn>
+
       <FadeIn delay={100}>
-        <ul className="mt-4 list-none m-0 p-0 flex flex-col gap-3">
-          {items.map((item) => (
-            <li
-              key={item}
-              className="relative pl-6 font-light"
-              style={{
-                fontSize: "15px",
-                color: "rgba(255,255,255,0.72)",
-                lineHeight: 1.7,
-              }}
-            >
-              <span
-                className="absolute left-0"
-                style={{ color: "rgba(255,255,255,0.2)" }}
-              >
-                {"\u2014"}
-              </span>
-              {item}
-            </li>
-          ))}
+        <ul className="list-none my-5 p-0">
+          <StyledListItem>
+            Live saxophone performance by Ben (featured set)
+          </StyledListItem>
+          <StyledListItem>
+            Wireless, fully mobile setup
+          </StyledListItem>
+          <StyledListItem>
+            Onsite soundcheck and coordination with venue
+          </StyledListItem>
+          <StyledListItem>
+            Performance tailored to the room and timeline
+          </StyledListItem>
+          <StyledListItem>
+            {"Optional: add-on set / extension (upon request)"}
+          </StyledListItem>
         </ul>
       </FadeIn>
-    </Section>
+    </section>
   )
 }
 
@@ -244,40 +322,44 @@ function WhatsIncluded() {
 /*  5 — Requirements                                                   */
 /* ------------------------------------------------------------------ */
 function Requirements() {
-  const items = [
-    "Access to a standard audio input at the venue (details confirmed in advance).",
-    "A brief arrival window for soundcheck.",
-  ]
-
   return (
-    <Section>
+    <section
+      className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
       <FadeIn>
         <SectionLabel>Requirements</SectionLabel>
+        <h3
+          className="font-bold mb-5"
+          style={{
+            fontSize: "clamp(20px, 2.5vw, 24px)",
+            letterSpacing: "-0.02em",
+            lineHeight: 1.1,
+            color: "#ffffff",
+          }}
+        >
+          A few things we need from the venue.
+        </h3>
       </FadeIn>
+
       <FadeIn delay={100}>
-        <ul className="mt-4 list-none m-0 p-0 flex flex-col gap-3">
-          {items.map((item) => (
-            <li
-              key={item}
-              className="relative pl-6 font-light"
-              style={{
-                fontSize: "15px",
-                color: "rgba(255,255,255,0.72)",
-                lineHeight: 1.7,
-              }}
-            >
-              <span
-                className="absolute left-0"
-                style={{ color: "rgba(255,255,255,0.2)" }}
-              >
-                {"\u2014"}
-              </span>
-              {item}
-            </li>
-          ))}
+        <ul className="list-none my-5 p-0">
+          <StyledListItem>
+            Access to a standard audio input at the venue (details confirmed in advance).
+          </StyledListItem>
+          <StyledListItem>
+            A brief arrival window for soundcheck.
+          </StyledListItem>
         </ul>
       </FadeIn>
-    </Section>
+
+      <FadeIn delay={200}>
+        <CalloutBox>
+          We coordinate directly with your venue or planner to keep setup clean
+          and stress-free.
+        </CalloutBox>
+      </FadeIn>
+    </section>
   )
 }
 
@@ -293,13 +375,16 @@ function Investment() {
   ]
 
   return (
-    <Section>
+    <section
+      className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
       <FadeIn>
         <SectionLabel>Investment + Terms</SectionLabel>
       </FadeIn>
       <FadeIn delay={100}>
         <div
-          className="mt-4 py-8 px-8 rounded-xl max-w-[480px]"
+          className="mt-4 py-8 px-8 max-w-[480px]"
           style={{
             background: "rgba(255,255,255,0.02)",
             border: "1px solid rgba(255,255,255,0.06)",
@@ -325,16 +410,28 @@ function Investment() {
           </dl>
         </div>
       </FadeIn>
-    </Section>
+
+      <FadeIn delay={200}>
+        <p
+          className="mt-6 text-[13px] font-light"
+          style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
+        >
+          50% retainer to reserve your date. Balance due 30 days prior.
+        </p>
+      </FadeIn>
+    </section>
   )
 }
 
 /* ------------------------------------------------------------------ */
-/*  7 — Final CTA band                                                 */
+/*  7 — Final CTA                                                      */
 /* ------------------------------------------------------------------ */
 function FinalCta() {
   return (
-    <Section className="text-center">
+    <section
+      className="px-9 md:px-[72px] py-24 max-w-[1040px] mx-auto text-center"
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
+    >
       <FadeIn>
         <p
           className="font-light mx-auto text-balance"
@@ -349,31 +446,89 @@ function FinalCta() {
           If the room matters, this is the move.
         </p>
       </FadeIn>
+
       <FadeIn delay={150}>
-        <div className="mt-10">
-          <CtaButtons center />
+        <div className="mt-10 flex justify-center">
+          <a
+            href={config.callTextLink || "mailto:hello@knoxsignature.com?subject=Knox%20Signature%20%E2%80%94%20Schedule%20a%20Call"}
+            className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold tracking-wide transition-all duration-200 hover:opacity-80"
+            style={{
+              background: "transparent",
+              color: "rgba(255,255,255,0.88)",
+              border: "1px solid rgba(255,255,255,0.2)",
+            }}
+          >
+            Call / Text
+          </a>
         </div>
       </FadeIn>
-    </Section>
+
+      <FadeIn delay={300}>
+        <p
+          className="mt-8 text-[13px] font-light"
+          style={{ color: "rgba(255,255,255,0.35)", letterSpacing: "0.02em" }}
+        >
+          Limited dates each season.
+        </p>
+      </FadeIn>
+    </section>
   )
 }
 
 /* ------------------------------------------------------------------ */
-/*  Minimal footer                                                     */
+/*  Footer — Knox Signature branding                                   */
 /* ------------------------------------------------------------------ */
 function ProposalFooter() {
   return (
     <footer
       className="px-9 md:px-[72px] pt-14 pb-20 max-w-[1040px] mx-auto"
-      style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
     >
       <FadeIn>
         <p
-          className="text-[13px] font-light"
-          style={{ color: "rgba(255,255,255,0.35)" }}
+          className="text-[10px] font-semibold uppercase mb-4"
+          style={{ letterSpacing: "4px", color: "rgba(255,255,255,0.35)" }}
         >
-          This proposal is confidential and intended solely for the named
-          recipient.
+          Knox Signature
+        </p>
+        <p
+          className="font-light mb-6"
+          style={{
+            fontSize: "15px",
+            color: "rgba(255,255,255,0.45)",
+          }}
+        >
+          Live saxophone + DJ atmospheres
+        </p>
+        <div
+          className="text-[14px] flex flex-col gap-1"
+          style={{ color: "rgba(255,255,255,0.45)", lineHeight: 2 }}
+        >
+          <p>Based in Dallas. Available worldwide.</p>
+          <p>
+            <a
+              href="mailto:hello@knoxsignature.com"
+              className="footer-link pb-px transition-all duration-200"
+            >
+              hello@knoxsignature.com
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://knoxsignature.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link pb-px transition-all duration-200"
+            >
+              knoxsignature.com
+            </a>
+          </p>
+        </div>
+        <p
+          className="mt-10 text-[12px] font-light"
+          style={{ color: "rgba(255,255,255,0.25)" }}
+        >
+          This proposal is confidential and intended solely for the named recipient.
         </p>
       </FadeIn>
     </footer>
@@ -386,7 +541,7 @@ function ProposalFooter() {
 export function ProposalPage() {
   return (
     <>
-      <Hero />
+      <Header />
       <EventDetails />
       <Experience />
       <WhatsIncluded />

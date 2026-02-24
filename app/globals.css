@@ -6,7 +6,7 @@
 :root {
   --color-midnight: #0a0a0a;
   --color-snow: #ffffff;
-  --color-hotlist-accent: #c4a87a;
+  --color-hotlist-accent: rgba(255, 255, 255, 0.88);
 
   --background: #0a0a0a;
   --foreground: #ffffff;
@@ -14,20 +14,20 @@
   --card-foreground: #ffffff;
   --popover: #111111;
   --popover-foreground: #ffffff;
-  --primary: #c4a87a;
+  --primary: #ffffff;
   --primary-foreground: #0a0a0a;
   --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
   --muted: #1a1a1a;
   --muted-foreground: rgba(255, 255, 255, 0.58);
-  --accent: #c4a87a;
+  --accent: rgba(255, 255, 255, 0.88);
   --accent-foreground: #0a0a0a;
   --destructive: #7f1d1d;
   --destructive-foreground: #ffffff;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.08);
-  --ring: #c4a87a;
-  --radius: 12px;
+  --ring: rgba(255, 255, 255, 0.2);
+  --radius: 0px;
 
   --opacity-primary: 0.88;
   --opacity-secondary: 0.72;
