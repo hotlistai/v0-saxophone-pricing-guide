@@ -12,6 +12,9 @@ export function VideoPlayer({
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
 
+  const isMovFile = src.toLowerCase().endsWith(".mov")
+  const mimeType = isMovFile ? "video/quicktime" : "video/mp4"
+
   function handlePlay() {
     if (videoRef.current) {
       videoRef.current.play()
@@ -25,7 +28,7 @@ export function VideoPlayer({
       <div className="relative">
         <video
           ref={videoRef}
-          className="block w-full h-auto rounded-xl shadow-lg"
+          className="block w-full h-auto shadow-lg"
           style={{ background: "#000" }}
           playsInline
           preload="metadata"
@@ -34,7 +37,8 @@ export function VideoPlayer({
           onEnded={() => setIsPlaying(false)}
           controls={isPlaying}
         >
-          <source src={src} type="video/mp4" />
+          <source src={src} type={mimeType} />
+          {isMovFile && <source src={src} type="video/mp4" />}
           Your browser does not support the video tag.
         </video>
         <button

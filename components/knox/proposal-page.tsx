@@ -25,8 +25,14 @@ function p(value: string, fallback: string) {
 const BANNER_IMAGE =
   "https://www.knoxsignature.com/images/knox-press-banner.png"
 
+const HERO_IMAGE =
+  "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png"
+
 const PREVIEW_VIDEO =
-  "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/knox-signature-web-video-man-i-need.mp4"
+  "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/copy_7176FC73-AE21-41C0-AD53-24F70BB44072.mov"
+
+const PERFORMANCE_VIDEO =
+  "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/copy_F7EA7A53-FECE-4210-92F6-0FD643DF13B1.mov"
 
 /* ------------------------------------------------------------------ */
 /*  Shared components matching Knox brand language                     */
@@ -143,6 +149,20 @@ function Header() {
             >
               Call / Text
             </a>
+          </div>
+        </FadeIn>
+
+        {/* Hero Image */}
+        <FadeIn delay={350}>
+          <div className="mt-16">
+            <Image
+              src={HERO_IMAGE}
+              alt="Ben performing live saxophone at a private event"
+              width={1200}
+              height={800}
+              className="w-full h-auto block"
+              style={{ border: "1px solid rgba(255,255,255,0.06)" }}
+            />
           </div>
         </FadeIn>
 
@@ -266,6 +286,19 @@ function Experience() {
           The focus is always on the room{"\u2014"}not the stage. The performance
           adapts to the energy of your guests in real time.
         </CalloutBox>
+      </FadeIn>
+
+      {/* Performance Video */}
+      <FadeIn delay={400}>
+        <div className="mt-10">
+          <VideoPlayer src={PERFORMANCE_VIDEO} />
+          <p
+            className="mt-4 text-sm font-light"
+            style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
+          >
+            Live performance in action.
+          </p>
+        </div>
       </FadeIn>
     </section>
   )
