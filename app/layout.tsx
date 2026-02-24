@@ -9,29 +9,29 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Knox Signature — Event Proposal',
+  title: 'Ben Live Saxophone — Event Proposal',
   description: 'A featured live saxophone performance designed to elevate the room in real time.',
   icons: {
-    icon: 'https://www.knoxsignature.com/images/knox-ks-icon.png',
-    apple: 'https://www.knoxsignature.com/images/knox-ks-icon.png',
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Knox Signature — Event Proposal',
+    title: 'Ben Live Saxophone — Event Proposal',
     description: 'A featured live saxophone performance designed to elevate the room in real time.',
     images: [
       {
-        url: 'https://www.knoxsignature.com/images/knox-press-banner.png',
-        width: 1920,
-        height: 600,
-        alt: 'Knox Signature',
+        url: 'https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png',
+        width: 1200,
+        height: 800,
+        alt: 'Ben live saxophone performance',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Knox Signature — Event Proposal',
+    title: 'Ben Live Saxophone — Event Proposal',
     description: 'A featured live saxophone performance designed to elevate the room in real time.',
-    images: ['https://www.knoxsignature.com/images/knox-press-banner.png'],
+    images: ['https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png'],
   },
 }
 

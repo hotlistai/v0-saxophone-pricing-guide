@@ -1,4 +1,4 @@
-import { ProposalPage } from "@/components/knox/proposal-page"
+import { ProposalPage } from "@/components/saxophone/proposal-page"
 
 export default function Page() {
   return (

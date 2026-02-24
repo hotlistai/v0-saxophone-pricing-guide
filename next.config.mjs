@@ -16,6 +16,11 @@ const nextConfig = {
         hostname: "www.knoxsignature.com",
         pathname: "/images/**",
       },
+      {
+        protocol: "https",
+        hostname: "blog.hotlistdigital.com",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 }
