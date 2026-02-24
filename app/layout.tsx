@@ -9,15 +9,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Ben Live Saxophone — Event Proposal',
-  description: 'A featured live saxophone performance designed to elevate the room in real time.',
+  title: 'Ben Live Saxophone — Planner Pricing Guide',
+  description: 'A planner-ready pricing guide for a featured live saxophone performance designed to elevate the room in real time.',
   icons: {
     icon: '/icon.svg',
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'Ben Live Saxophone — Event Proposal',
-    description: 'A featured live saxophone performance designed to elevate the room in real time.',
+    title: 'Ben Live Saxophone — Planner Pricing Guide',
+    description: 'A planner-ready pricing guide for a featured live saxophone performance designed to elevate the room in real time.',
     images: [
       {
         url: 'https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ben Live Saxophone — Event Proposal',
-    description: 'A featured live saxophone performance designed to elevate the room in real time.',
+    title: 'Ben Live Saxophone — Planner Pricing Guide',
+    description: 'A planner-ready pricing guide for a featured live saxophone performance designed to elevate the room in real time.',
     images: ['https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png'],
   },
 }

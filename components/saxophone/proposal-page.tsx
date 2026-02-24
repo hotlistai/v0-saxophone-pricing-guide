@@ -10,31 +10,16 @@ const config = {
   brandName: "",
   contactEmail: "",
   websiteUrl: "",
-  clientName: "",
-  eventDate: "",
-  venue: "",
-  plannerName: "",
-  setTimes: "",
-  investment: "",
-  retainer: "",
-  balanceDue: "",
-  overtime: "",
-  callTextLink: "",
-}
-
-function p(value: string, fallback: string) {
-  return value || `[${fallback}]`
+  packageName: "",
+  packagePrice: "",
 }
 
 const PERFORMER_NAME = config.performerName || "Ben"
 const BRAND_NAME = config.brandName || "Ben Live Saxophone"
 const CONTACT_EMAIL = config.contactEmail || "booking@example.com"
 const WEBSITE_URL = config.websiteUrl || ""
-const CALL_TEXT_LINK =
-  config.callTextLink ||
-  `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
-    `${BRAND_NAME} — Schedule a Call`
-  )}`
+const PACKAGE_NAME = config.packageName || "Signature Sax Feature"
+const PACKAGE_PRICE = config.packagePrice || "$1,150"
 
 const HERO_IMAGE =
   "https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png"
@@ -121,7 +106,7 @@ function Header() {
             className="text-[10px] font-semibold uppercase mb-4"
             style={{ letterSpacing: "4.5px", color: "rgba(255,255,255,0.4)" }}
           >
-            Proposal Only
+            Planner Pricing Guide
           </p>
           <h1
             className="font-extrabold text-balance"
@@ -149,24 +134,8 @@ function Header() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={300}>
-          <div className="mt-10">
-            <a
-              href={CALL_TEXT_LINK}
-              className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold tracking-wide transition-all duration-200 hover:opacity-80"
-              style={{
-                background: "transparent",
-                color: "rgba(255,255,255,0.88)",
-                border: "1px solid rgba(255,255,255,0.2)",
-              }}
-            >
-              Call / Text
-            </a>
-          </div>
-        </FadeIn>
-
         {/* Hero Image */}
-        <FadeIn delay={350}>
+        <FadeIn delay={300}>
           <div className="mt-16">
             <Image
               src={HERO_IMAGE}
@@ -180,10 +149,10 @@ function Header() {
         </FadeIn>
 
         {/* Private Preview */}
-        <FadeIn delay={450}>
+        <FadeIn delay={400}>
           <div className="mt-20">
             <SectionLabel>Private Preview</SectionLabel>
-            <VideoPlayer src={PREVIEW_VIDEO} />
+            <VideoPlayer src={PREVIEW_VIDEO} halfWidth />
             <p
               className="mt-4 text-sm font-light"
               style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
@@ -198,59 +167,7 @@ function Header() {
 }
 
 /* ------------------------------------------------------------------ */
-/*  2 — Event Details                                                  */
-/* ------------------------------------------------------------------ */
-function EventDetails() {
-  const rows = [
-    { label: "Client", value: p(config.clientName, "Client Name") },
-    { label: "Date", value: p(config.eventDate, "Event Date") },
-    { label: "Venue", value: p(config.venue, "Venue Name + City") },
-    { label: "Planner", value: p(config.plannerName, "Planner Name") },
-    { label: "Set Time(s)", value: p(config.setTimes, "Time Window") },
-  ]
-
-  return (
-    <section
-      className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
-      style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
-    >
-      <FadeIn>
-        <SectionLabel>Event Details</SectionLabel>
-      </FadeIn>
-      <FadeIn delay={100}>
-        <div
-          className="mt-4 py-8 px-8 max-w-[480px]"
-          style={{
-            background: "rgba(255,255,255,0.02)",
-            border: "1px solid rgba(255,255,255,0.06)",
-          }}
-        >
-          <dl className="flex flex-col gap-4 m-0">
-            {rows.map((row) => (
-              <div key={row.label} className="flex justify-between gap-6">
-                <dt
-                  className="text-[14px] font-medium shrink-0"
-                  style={{ color: "rgba(255,255,255,0.5)" }}
-                >
-                  {row.label}
-                </dt>
-                <dd
-                  className="text-[14px] font-medium text-right m-0"
-                  style={{ color: "rgba(255,255,255,0.88)" }}
-                >
-                  {row.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </FadeIn>
-    </section>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/*  3 — The Experience                                                 */
+/*  2 — The Experience                                                 */
 /* ------------------------------------------------------------------ */
 function Experience() {
   return (
@@ -286,25 +203,29 @@ function Experience() {
       </FadeIn>
 
       <FadeIn delay={200}>
-        <p
-          className="mt-5 font-light"
-          style={{ color: "rgba(255,255,255,0.72)", lineHeight: 1.7 }}
-        >
-          Every set is tailored to the timeline and feel of the room.
-        </p>
-      </FadeIn>
-
-      <FadeIn delay={300}>
-        <CalloutBox>
-          The focus is always on the room{"\u2014"}not the stage. The performance
-          adapts to the energy of your guests in real time.
-        </CalloutBox>
+        <ul className="list-none mt-6 mb-0 p-0">
+          <StyledListItem>
+            Performance layered directly over your DJ’s live mix
+          </StyledListItem>
+          <StyledListItem>
+            Real-time improvisation tailored to your crowd
+          </StyledListItem>
+          <StyledListItem>
+            Engaging performance within the crowd
+          </StyledListItem>
+          <StyledListItem>
+            Dance floor walk-through moments
+          </StyledListItem>
+          <StyledListItem>
+            Guest interaction and high-energy highlights
+          </StyledListItem>
+        </ul>
       </FadeIn>
 
       {/* Performance Video */}
-      <FadeIn delay={400}>
+      <FadeIn delay={300}>
         <div className="mt-10">
-          <VideoPlayer src={PERFORMANCE_VIDEO} />
+          <VideoPlayer src={PERFORMANCE_VIDEO} halfWidth />
           <p
             className="mt-4 text-sm font-light"
             style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
@@ -344,19 +265,25 @@ function WhatsIncluded() {
       <FadeIn delay={100}>
         <ul className="list-none my-5 p-0">
           <StyledListItem>
-            Live saxophone performance by Ben (featured set)
+            Featured live saxophone performance by {PERFORMER_NAME}
           </StyledListItem>
           <StyledListItem>
-            Wireless, fully mobile setup
+            Wireless sax setup for complete mobility
           </StyledListItem>
           <StyledListItem>
-            Onsite soundcheck and coordination with venue
+            Direct connection into your DJ’s sound system
           </StyledListItem>
           <StyledListItem>
-            Performance tailored to the room and timeline
+            Coordination with DJ for a clean, continuous mix
           </StyledListItem>
           <StyledListItem>
-            {"Optional: add-on set / extension (upon request)"}
+            Performance layered directly over the live DJ set
+          </StyledListItem>
+          <StyledListItem>
+            Dance floor walk-through moments + guest interaction highlights
+          </StyledListItem>
+          <StyledListItem>
+            {"Optional: add-on extension / additional set (upon request)"}
           </StyledListItem>
         </ul>
       </FadeIn>
@@ -384,14 +311,14 @@ function Requirements() {
             color: "#ffffff",
           }}
         >
-          A few things we need from the venue.
+          A few things we need from the DJ team.
         </h3>
       </FadeIn>
 
       <FadeIn delay={100}>
         <ul className="list-none my-5 p-0">
           <StyledListItem>
-            Access to a standard audio input at the venue (details confirmed in advance).
+            Access to a standard line/input through the DJ or sound system (details confirmed in advance).
           </StyledListItem>
           <StyledListItem>
             A brief arrival window for soundcheck.
@@ -401,8 +328,8 @@ function Requirements() {
 
       <FadeIn delay={200}>
         <CalloutBox>
-          We coordinate directly with your venue or planner to keep setup clean
-          and stress-free.
+          We coordinate directly with your DJ and planner to keep setup clean,
+          quick, and seamless.
         </CalloutBox>
       </FadeIn>
     </section>
@@ -413,47 +340,66 @@ function Requirements() {
 /*  6 — Investment + Terms                                             */
 /* ------------------------------------------------------------------ */
 function Investment() {
-  const rows = [
-    { label: "Investment", value: p(config.investment, "---") },
-    { label: "Retainer to reserve", value: p(config.retainer, "---") },
-    { label: "Balance due", value: p(config.balanceDue, "---") },
-    { label: "Overtime / extension", value: p(config.overtime, "---") },
-  ]
-
   return (
     <section
       className="px-9 md:px-[72px] py-[72px] max-w-[1040px] mx-auto"
       style={{ borderTop: "1px solid rgba(255,255,255,0.04)" }}
     >
       <FadeIn>
-        <SectionLabel>Investment + Terms</SectionLabel>
+        <SectionLabel>Investment</SectionLabel>
       </FadeIn>
       <FadeIn delay={100}>
         <div
-          className="mt-4 py-8 px-8 max-w-[480px]"
+          className="mt-4 py-8 px-8 max-w-[640px]"
           style={{
             background: "rgba(255,255,255,0.02)",
             border: "1px solid rgba(255,255,255,0.06)",
           }}
         >
-          <dl className="flex flex-col gap-4 m-0">
-            {rows.map((row) => (
-              <div key={row.label} className="flex justify-between gap-6">
-                <dt
-                  className="text-[14px] font-medium shrink-0"
-                  style={{ color: "rgba(255,255,255,0.5)" }}
-                >
-                  {row.label}
-                </dt>
-                <dd
-                  className="text-[14px] font-medium text-right m-0"
-                  style={{ color: "rgba(255,255,255,0.88)" }}
-                >
-                  {row.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
+          <p
+            className="text-[11px] font-semibold uppercase mb-4"
+            style={{ letterSpacing: "0.28em", color: "rgba(255,255,255,0.35)" }}
+          >
+            Sax Package
+          </p>
+          <div className="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+            <h3
+              className="font-bold m-0"
+              style={{
+                fontSize: "clamp(22px, 2.4vw, 28px)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+                color: "#ffffff",
+              }}
+            >
+              {PACKAGE_NAME}
+            </h3>
+            <p
+              className="m-0 font-semibold"
+              style={{
+                fontSize: "clamp(24px, 2.8vw, 32px)",
+                letterSpacing: "-0.02em",
+                color: "rgba(255,255,255,0.92)",
+              }}
+            >
+              {PACKAGE_PRICE}
+            </p>
+          </div>
+
+          <ul className="list-none mt-7 mb-0 p-0">
+            <StyledListItem>
+              Featured live saxophone performance layered over your DJ’s set
+            </StyledListItem>
+            <StyledListItem>
+              Wireless roaming performance with dance floor walk-through moments
+            </StyledListItem>
+            <StyledListItem>
+              Real-time improvisation, guest interaction, and high-energy highlights
+            </StyledListItem>
+            <StyledListItem>
+              Direct DJ/sound-system connection + soundcheck coordination
+            </StyledListItem>
+          </ul>
         </div>
       </FadeIn>
 
@@ -462,7 +408,8 @@ function Investment() {
           className="mt-6 text-[13px] font-light"
           style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
         >
-          50% retainer to reserve your date. Balance due 30 days prior.
+          Planner pricing guide rate for the featured sax package. Extended time,
+          travel, or custom additions can be quoted separately.
         </p>
       </FadeIn>
     </section>
@@ -494,22 +441,6 @@ function FinalCta() {
       </FadeIn>
 
       <FadeIn delay={150}>
-        <div className="mt-10 flex justify-center">
-          <a
-            href={CALL_TEXT_LINK}
-            className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold tracking-wide transition-all duration-200 hover:opacity-80"
-            style={{
-              background: "transparent",
-              color: "rgba(255,255,255,0.88)",
-              border: "1px solid rgba(255,255,255,0.2)",
-            }}
-          >
-            Call / Text
-          </a>
-        </div>
-      </FadeIn>
-
-      <FadeIn delay={300}>
         <p
           className="mt-8 text-[13px] font-light"
           style={{ color: "rgba(255,255,255,0.35)", letterSpacing: "0.02em" }}
@@ -544,7 +475,7 @@ function ProposalFooter() {
             color: "rgba(255,255,255,0.45)",
           }}
         >
-          Proposal for live saxophone performance
+          Planner pricing guide for live saxophone performance
         </p>
         <div
           className="text-[14px] flex flex-col gap-1"
@@ -590,7 +521,6 @@ export function ProposalPage() {
   return (
     <>
       <Header />
-      <EventDetails />
       <Experience />
       <WhatsIncluded />
       <Requirements />
