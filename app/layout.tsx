@@ -9,29 +9,20 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Knox Signature — Request an Atmosphere',
-  description: 'Live saxophone + DJ, designed as one continuous atmosphere. Premium private event experiences by Knox Signature.',
+  title: 'Ben — Live Saxophone | Event Proposal',
+  description: 'A featured live performance designed to elevate the room in real time.',
   icons: {
     icon: 'https://www.knoxsignature.com/images/knox-ks-icon.png',
     apple: 'https://www.knoxsignature.com/images/knox-ks-icon.png',
   },
   openGraph: {
-    title: 'Knox Signature — Request an Atmosphere',
-    description: 'Live saxophone + DJ, designed as one continuous atmosphere. Premium private event experiences by Knox Signature.',
-    images: [
-      {
-        url: 'https://www.knoxsignature.com/images/knox-press-banner.png',
-        width: 1920,
-        height: 600,
-        alt: 'Knox Signature',
-      },
-    ],
+    title: 'Ben — Live Saxophone | Event Proposal',
+    description: 'A featured live performance designed to elevate the room in real time.',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Knox Signature — Request an Atmosphere',
-    description: 'Live saxophone + DJ, designed as one continuous atmosphere. Premium private event experiences by Knox Signature.',
-    images: ['https://www.knoxsignature.com/images/knox-press-banner.png'],
+    card: 'summary',
+    title: 'Ben — Live Saxophone | Event Proposal',
+    description: 'A featured live performance designed to elevate the room in real time.',
   },
 }
 

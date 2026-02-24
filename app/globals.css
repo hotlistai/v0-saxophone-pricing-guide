@@ -6,8 +6,7 @@
 :root {
   --color-midnight: #0a0a0a;
   --color-snow: #ffffff;
-  --color-hotlist-purple: #667eea;
-  --color-hotlist-violet: #764ba2;
+  --color-hotlist-accent: #c4a87a;
 
   --background: #0a0a0a;
   --foreground: #ffffff;
@@ -15,19 +14,19 @@
   --card-foreground: #ffffff;
   --popover: #111111;
   --popover-foreground: #ffffff;
-  --primary: #667eea;
-  --primary-foreground: #ffffff;
+  --primary: #c4a87a;
+  --primary-foreground: #0a0a0a;
   --secondary: #1a1a1a;
   --secondary-foreground: #ffffff;
   --muted: #1a1a1a;
   --muted-foreground: rgba(255, 255, 255, 0.58);
-  --accent: #764ba2;
-  --accent-foreground: #ffffff;
+  --accent: #c4a87a;
+  --accent-foreground: #0a0a0a;
   --destructive: #7f1d1d;
   --destructive-foreground: #ffffff;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.08);
-  --ring: #667eea;
+  --ring: #c4a87a;
   --radius: 12px;
 
   --opacity-primary: 0.88;
@@ -86,32 +85,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Gradient accent text */
-.gradient-accent {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
-/* Package card styles */
-.package-card-default {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-.package-card-default:hover {
-  background: rgba(255, 255, 255, 0.035);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.package-card-featured {
-  background: rgba(102, 126, 234, 0.04);
-  border: 2px solid rgba(102, 126, 234, 0.3);
-}
-.package-card-featured:hover {
-  background: rgba(102, 126, 234, 0.06);
-  border-color: rgba(102, 126, 234, 0.5);
-}
 
 /* Footer link styles */
 .footer-link {
