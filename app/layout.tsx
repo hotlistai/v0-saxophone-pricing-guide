@@ -9,15 +9,15 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Knox Signature — Kylie + Noah',
-  description: 'A private experience designed with intention. Surprise ceremony and dinner — October 9, 2026.',
+  title: 'Knox Signature — Event Proposal',
+  description: 'A featured live saxophone performance designed to elevate the room in real time.',
   icons: {
     icon: 'https://www.knoxsignature.com/images/knox-ks-icon.png',
     apple: 'https://www.knoxsignature.com/images/knox-ks-icon.png',
   },
   openGraph: {
-    title: 'Knox Signature — Kylie + Noah',
-    description: 'A private experience designed with intention. Surprise ceremony and dinner — October 9, 2026.',
+    title: 'Knox Signature — Event Proposal',
+    description: 'A featured live saxophone performance designed to elevate the room in real time.',
     images: [
       {
         url: 'https://www.knoxsignature.com/images/knox-press-banner.png',
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Knox Signature — Kylie + Noah',
-    description: 'A private experience designed with intention. Surprise ceremony and dinner — October 9, 2026.',
+    title: 'Knox Signature — Event Proposal',
+    description: 'A featured live saxophone performance designed to elevate the room in real time.',
     images: ['https://www.knoxsignature.com/images/knox-press-banner.png'],
   },
 }
