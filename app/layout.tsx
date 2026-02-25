@@ -9,6 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://v0-saxophone-pricing-guide.vercel.app'),
   title: 'Ben Live Saxophone — Planner Pricing Guide',
   description: 'A planner-ready pricing guide for a featured live saxophone performance designed to elevate the room in real time.',
   icons: {
@@ -20,10 +21,10 @@ export const metadata: Metadata = {
     description: 'A planner-ready pricing guide for a featured live saxophone performance designed to elevate the room in real time.',
     images: [
       {
-        url: 'https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png',
+        url: '/og-image.png',
         width: 1200,
-        height: 800,
-        alt: 'Ben live saxophone performance',
+        height: 630,
+        alt: 'Knox Signature',
       },
     ],
   },
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ben Live Saxophone — Planner Pricing Guide',
     description: 'A planner-ready pricing guide for a featured live saxophone performance designed to elevate the room in real time.',
-    images: ['https://blog.hotlistdigital.com/wp-content/uploads/2026/02/A1B2B3EB-5FEB-4EC6-92DD-526510F2BE85.png'],
+    images: ['/og-image.png'],
   },
 }
 
