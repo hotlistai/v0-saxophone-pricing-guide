@@ -16,7 +16,7 @@ const config = {
 
 const PERFORMER_NAME = config.performerName || "Ben"
 const BRAND_NAME = config.brandName || "Ben Live Saxophone"
-const CONTACT_EMAIL = config.contactEmail || "booking@example.com"
+const CONTACT_EMAIL = config.contactEmail || "hello@knoxsignature.com"
 const WEBSITE_URL = config.websiteUrl || ""
 const PACKAGE_NAME = config.packageName || "Signature Sax Feature"
 const PACKAGE_PRICE = config.packagePrice || "$1,150"
@@ -153,12 +153,6 @@ function Header() {
           <div className="mt-20">
             <SectionLabel>Private Preview</SectionLabel>
             <VideoPlayer src={PREVIEW_VIDEO} halfWidth />
-            <p
-              className="mt-4 text-sm font-light"
-              style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
-            >
-              A look at how the evening feels when everything moves as one.
-            </p>
           </div>
         </FadeIn>
       </div>
@@ -226,12 +220,6 @@ function Experience() {
       <FadeIn delay={300}>
         <div className="mt-10">
           <VideoPlayer src={PERFORMANCE_VIDEO} halfWidth />
-          <p
-            className="mt-4 text-sm font-light"
-            style={{ color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}
-          >
-            Live performance in action.
-          </p>
         </div>
       </FadeIn>
     </section>
@@ -275,9 +263,6 @@ function WhatsIncluded() {
           </StyledListItem>
           <StyledListItem>
             Coordination with DJ for a clean, continuous mix
-          </StyledListItem>
-          <StyledListItem>
-            Performance layered directly over the live DJ set
           </StyledListItem>
           <StyledListItem>
             Dance floor walk-through moments + guest interaction highlights
