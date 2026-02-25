@@ -373,9 +373,6 @@ function Investment() {
 
           <ul className="list-none mt-7 mb-0 p-0">
             <StyledListItem>
-              Featured live saxophone performance layered over your DJ’s set
-            </StyledListItem>
-            <StyledListItem>
               Wireless roaming performance with dance floor walk-through moments
             </StyledListItem>
             <StyledListItem>
